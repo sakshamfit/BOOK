@@ -1,0 +1,12 @@
+import {createRequire} from 'node:module';
+import {dirname,resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {spawnSync} from 'node:child_process';
+const require=createRequire(import.meta.url);
+const wranglerRoot=dirname(require.resolve('wrangler/package.json'));
+const esbuildPath=require.resolve('esbuild',{paths:[wranglerRoot]});
+const {build}=await import(pathToFileURL(esbuildPath).href);
+const output=resolve('.sites-runtime/api.test.mjs');
+await build({entryPoints:['tests/api.test.ts'],bundle:true,platform:'node',format:'esm',alias:{'cloudflare:workers':resolve('tests/runtime-stub.ts')},outfile:output});
+const result=spawnSync(process.execPath,['--test',output],{stdio:'inherit'});
+process.exitCode=result.status??1;
