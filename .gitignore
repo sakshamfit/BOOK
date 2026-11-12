@@ -58,6 +58,10 @@ yarn-error.log*
 /public/*.svg
 /public/covers/
 /public/fonts/
+# Generated demonstration covers + favicon are committed so hosted builds have art.
+!/public/covers/
+!/public/covers/*.svg
+!/public/favicon.svg
 *.otf
 *.ttf
 *.woff

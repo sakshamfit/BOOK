@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" width="720" height="1080" role="img" aria-label="THE WORLD IN BETWEEN by MIRA SOL">
+  <rect width="720" height="1080" fill="#a58bc6"/>
+  <g>
+    
+      <circle cx="480" cy="210" r="118" fill="#e84928"/>
+      <g fill="#4a2f57">
+        <path d="M0 640V430a70 70 0 0 1 140 0v210z"/>
+        <path d="M150 640V390a80 80 0 0 1 160 0v250z"/>
+        <path d="M320 640V455a60 60 0 0 1 120 0v185z"/>
+        <path d="M450 640V350a90 90 0 0 1 180 0v290z"/>
+        <path d="M640 640V470a50 50 0 0 1 100 0v170z"/>
+      </g>
+      <g fill="#2c1c33">
+        <path d="M0 560V430a70 70 0 0 1 140 0v130z" opacity=".85"/>
+        <path d="M150 560V390a80 80 0 0 1 160 0v170z" opacity=".85"/>
+      </g>
+      <path d="M0 640h720" stroke="#2c1c33" stroke-width="2" opacity=".35"/>
+  </g>
+  <text x="64" y="78" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6" fill="#2c1c33" opacity=".8">FOLIO</text>
+  <g fill="#2c1c33">
+  <text x="64" y="800" font-family="Georgia, 'Times New Roman', serif" font-size="88" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">THE WORLD</text>
+  <text x="64" y="882.72" font-family="Georgia, 'Times New Roman', serif" font-size="88" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">IN BETWEEN</text>
+  </g>
+  <path d="M64 928.72h592" stroke="#2c1c33" stroke-width="1.2" opacity=".45"/>
+  <text x="64" y="986.72" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" letter-spacing="4" fill="#2c1c33">MIRA SOL</text>
+  <text x="656" y="1016" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#2c1c33">f.</text>
+</svg>

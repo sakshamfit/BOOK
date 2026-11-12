@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" width="720" height="1080" role="img" aria-label="THE SHAPE OF EVERYDAY by ADA REED">
+  <rect width="720" height="1080" fill="#262626"/>
+  <g>
+    
+      <circle cx="245" cy="250" r="130" fill="#f2ead4"/>
+      <rect x="380" y="120" width="260" height="260" fill="none" stroke="#f2ead4" stroke-width="2"/>
+      <path d="M380 380h260v0" stroke="#f2ead4" stroke-width="2"/>
+      <path d="M110 520L250 300l140 220z" fill="#f2ead4" opacity=".92"/>
+      <path d="M340 380h300v140H340z" fill="#9a2f1c"/>
+      <rect x="470" y="160" width="80" height="80" fill="#9a2f1c"/>
+  </g>
+  <text x="64" y="78" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6" fill="#f2ead4" opacity=".8">FOLIO</text>
+  <g fill="#f2ead4">
+  <text x="64" y="800" font-family="Georgia, 'Times New Roman', serif" font-size="77" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">THE SHAPE OF</text>
+  <text x="64" y="872.38" font-family="Georgia, 'Times New Roman', serif" font-size="77" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">EVERYDAY</text>
+  </g>
+  <path d="M64 918.38h592" stroke="#f2ead4" stroke-width="1.2" opacity=".45"/>
+  <text x="64" y="976.38" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" letter-spacing="4" fill="#f2ead4">ADA REED</text>
+  <text x="656" y="1016" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#f2ead4">f.</text>
+</svg>
