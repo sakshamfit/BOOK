@@ -44,6 +44,8 @@
     "node_modules",
     "examples",
     "dist",
+    // Cloudflare/Vite build tooling; validated by Vite, not by Next's type pass.
+    "vite.config.ts",
     ".vinext",
     ".wrangler",
     ".sites-runtime",

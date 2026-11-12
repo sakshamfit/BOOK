@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" width="720" height="1080" role="img" aria-label="SMALL HOURS by EMIL NORTH">
+  <rect width="720" height="1080" fill="#efe2a1"/>
+  <g>
+    
+      <circle cx="270" cy="250" r="130" fill="#f8f1d3" stroke="#26241c" stroke-width="1.4"/>
+      <circle cx="320" cy="215" r="130" fill="#efe2a1" stroke="none"/>
+      <g fill="none" stroke="#26241c" stroke-width="1.2">
+        <path d="M520 600V160"/>
+        <path d="M520 260c-40-16-60-40-66-70M520 340c-46-18-70-46-78-80M520 420c-52-20-80-52-90-90M520 240c40-14 62-36 70-64M520 320c48-16 74-42 84-74"/>
+      </g>
+      <rect x="120" y="430" width="120" height="150" fill="#2c4bb0"/>
+      <path d="M180 430v150M120 505h120" stroke="#efe2a1" stroke-width="3"/>
+      <circle cx="600" cy="520" r="4" fill="#26241c"/>
+  </g>
+  <text x="64" y="78" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6" fill="#26241c" opacity=".8">FOLIO</text>
+  <g fill="#26241c">
+  <text x="64" y="800" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">SMALL</text>
+  <text x="64" y="897.76" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">HOURS</text>
+  </g>
+  <path d="M64 943.76h592" stroke="#26241c" stroke-width="1.2" opacity=".45"/>
+  <text x="64" y="1001.76" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" letter-spacing="4" fill="#26241c">EMIL NORTH</text>
+  <text x="656" y="1016" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#26241c">f.</text>
+</svg>

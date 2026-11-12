@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" width="720" height="1080" role="img" aria-label="A FIELD GUIDE TO WONDER by IRIS WREN">
+  <rect width="720" height="1080" fill="#ced736"/>
+  <g>
+    
+      <g fill="none" stroke="#1d3a22" stroke-linecap="round">
+        <path d="M360 640V150" stroke-width="4"/>
+        <path d="M360 200C285 174 210 194 210 212" stroke-width="3"/>
+                  <path d="M360 200C435 174 510 194 510 212" stroke-width="3"/>
+        <path d="M360 248C290.5 222 221 242 221 260" stroke-width="3"/>
+                  <path d="M360 248C429.5 222 499 242 499 260" stroke-width="3"/>
+        <path d="M360 296C296 270 232 290 232 308" stroke-width="3"/>
+                  <path d="M360 296C424 270 488 290 488 308" stroke-width="3"/>
+        <path d="M360 344C301.5 318 243 338 243 356" stroke-width="3"/>
+                  <path d="M360 344C418.5 318 477 338 477 356" stroke-width="3"/>
+        <path d="M360 392C307 366 254 386 254 404" stroke-width="3"/>
+                  <path d="M360 392C413 366 466 386 466 404" stroke-width="3"/>
+        <path d="M360 440C312.5 414 265 434 265 452" stroke-width="3"/>
+                  <path d="M360 440C407.5 414 455 434 455 452" stroke-width="3"/>
+        <path d="M360 488C318 462 276 482 276 500" stroke-width="3"/>
+                  <path d="M360 488C402 462 444 482 444 500" stroke-width="3"/>
+        <path d="M360 536C323.5 510 287 530 287 548" stroke-width="3"/>
+                  <path d="M360 536C396.5 510 433 530 433 548" stroke-width="3"/>
+        <path d="M360 584C329 558 298 578 298 596" stroke-width="3"/>
+                  <path d="M360 584C391 558 422 578 422 596" stroke-width="3"/>
+      </g>
+      <circle cx="360" cy="150" r="16" fill="#1d3a22"/>
+  </g>
+  <text x="64" y="78" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6" fill="#1d3a22" opacity=".8">FOLIO</text>
+  <g fill="#1d3a22">
+  <text x="64" y="800" font-family="Georgia, 'Times New Roman', serif" font-size="71" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">A FIELD GUIDE</text>
+  <text x="64" y="866.74" font-family="Georgia, 'Times New Roman', serif" font-size="71" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">TO WONDER</text>
+  </g>
+  <path d="M64 912.74h592" stroke="#1d3a22" stroke-width="1.2" opacity=".45"/>
+  <text x="64" y="970.74" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" letter-spacing="4" fill="#1d3a22">IRIS WREN</text>
+  <text x="656" y="1016" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#1d3a22">f.</text>
+</svg>

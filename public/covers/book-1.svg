@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" width="720" height="1080" role="img" aria-label="THE ART OF NOTICING by ELLA MARLOW">
+  <rect width="720" height="1080" fill="#e8e1cc"/>
+  <g>
+    
+      <circle cx="360" cy="300" r="178" fill="#1647ba"/>
+      <path d="M-20 430C140 300 250 500 400 370S610 210 740 330" fill="none" stroke="#191c17" stroke-width="3"/>
+      <path d="M-20 470C160 350 260 520 420 400S620 250 740 360" fill="none" stroke="#191c17" stroke-width="1.4" opacity=".55"/>
+      <circle cx="360" cy="300" r="228" fill="none" stroke="#191c17" stroke-width="1" opacity=".35"/>
+  </g>
+  <text x="64" y="78" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6" fill="#191c17" opacity=".8">FOLIO</text>
+  <g fill="#191c17">
+  <text x="64" y="800" font-family="Georgia, 'Times New Roman', serif" font-size="92" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">THE ART OF</text>
+  <text x="64" y="886.48" font-family="Georgia, 'Times New Roman', serif" font-size="92" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">NOTICING</text>
+  </g>
+  <path d="M64 932.48h592" stroke="#191c17" stroke-width="1.2" opacity=".45"/>
+  <text x="64" y="990.48" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" letter-spacing="4" fill="#191c17">ELLA MARLOW</text>
+  <text x="656" y="1016" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#191c17">f.</text>
+</svg>

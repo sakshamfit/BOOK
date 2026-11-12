@@ -62,6 +62,6 @@ const excerpts=[
 ['Before morning','Let the day arrive slowly.\nLet the birds rehearse.\n\nThere is still a minute\nthat belongs to no one.\n\nSit here with me.\nWe will give it\na name later.']
 ]
 ];
-export const books:Book[]=entries.map((e,i)=>({id:e[0],title:e[1],authorId:e[2],genre:e[3],price:e[4],stock:e[5],cover:`/covers/book-${i+1}.webp`,color:e[6],description:e[7],pages:e[8],format:e[9],featured:i<4,demo:true,preview:excerpts[i].map(([title,text])=>({title,text}))}));
+export const books:Book[]=entries.map((e,i)=>({id:e[0],title:e[1],authorId:e[2],genre:e[3],price:e[4],stock:e[5],cover:`/covers/book-${i+1}.svg`,color:e[6],description:e[7],pages:e[8],format:e[9],featured:i<4,demo:true,preview:excerpts[i].map(([title,text])=>({title,text}))}));
 export const defaultSettings={heroLine:'WORLDS WITHIN.',heroIntro:'Step into',shipping:490,freeShipping:5000,storeName:'Folio',shippingCountries:['FR','DE','BE','NL','ES','IT'],announcement:'A little curiosity goes a long way.',commerceEnabled:false};
 export const euro=(cents:number)=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:2}).format(cents/100);

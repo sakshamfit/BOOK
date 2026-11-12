@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" width="720" height="1080" role="img" aria-label="WILD ATLAS by JUNE ALDER">
+  <rect width="720" height="1080" fill="#b4c6af"/>
+  <g>
+    
+      <g fill="#173325" opacity=".9">
+        <ellipse cx="250" cy="250" rx="120" ry="58" transform="rotate(-28 250 250)"/>
+        <ellipse cx="410" cy="330" rx="140" ry="66" transform="rotate(18 410 330)"/>
+        <ellipse cx="290" cy="430" rx="110" ry="52" transform="rotate(-8 290 430)"/>
+        <ellipse cx="520" cy="220" rx="96" ry="48" transform="rotate(38 520 220)"/>
+      </g>
+      <g fill="none" stroke="#e7eee2" stroke-width="1.4" opacity=".55">
+        <path d="M190 220C300 260 380 320 470 470"/>
+        <path d="M230 190C340 240 420 310 505 440"/>
+        <path d="M150 600C280 560 430 580 620 520"/>
+        <path d="M150 640C290 600 440 620 620 560"/>
+      </g>
+      <circle cx="600" cy="150" r="34" fill="none" stroke="#173325" stroke-width="1.4"/>
+  </g>
+  <text x="64" y="78" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6" fill="#173325" opacity=".8">FOLIO</text>
+  <g fill="#173325">
+  <text x="64" y="800" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">WILD</text>
+  <text x="64" y="897.76" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">ATLAS</text>
+  </g>
+  <path d="M64 943.76h592" stroke="#173325" stroke-width="1.2" opacity=".45"/>
+  <text x="64" y="1001.76" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" letter-spacing="4" fill="#173325">JUNE ALDER</text>
+  <text x="656" y="1016" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#173325">f.</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" width="720" height="1080" role="img" aria-label="AFTER THE LAST TRAIN by LEO ASH">
+  <rect width="720" height="1080" fill="#e84928"/>
+  <g>
+    
+      <rect x="120" y="140" width="480" height="330" rx="26" fill="#1a2f9c"/>
+      <rect x="150" y="170" width="420" height="270" rx="14" fill="none" stroke="#fdf2d8" stroke-width="1.4" opacity=".65"/>
+      <g stroke="#7f8fe8" stroke-width="1.6" opacity=".8">
+        <path d="M150 235h420M150 300h420M150 365h420"/>
+        <path d="M290 170v270M430 170v270"/>
+      </g>
+      <circle cx="360" cy="270" r="44" fill="#fdf2d8" opacity=".92"/>
+      <g fill="#fdf2d8">
+        <circle cx="560" cy="130" r="3"/><circle cx="640" cy="200" r="2"/><circle cx="96" cy="230" r="2.5"/>
+        <circle cx="600" cy="520" r="2"/><circle cx="80" cy="470" r="2"/>
+      </g>
+      <path d="M120 520h480" stroke="#fdf2d8" stroke-width="6" opacity=".85"/>
+      <path d="M0 590h720" stroke="#7a1c0d" stroke-width="1.2" opacity=".5"/>
+  </g>
+  <text x="64" y="78" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" letter-spacing="6" fill="#fdf2d8" opacity=".8">FOLIO</text>
+  <g fill="#fdf2d8">
+  <text x="64" y="800" font-family="Georgia, 'Times New Roman', serif" font-size="90" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">AFTER THE</text>
+  <text x="64" y="884.6" font-family="Georgia, 'Times New Roman', serif" font-size="90" letter-spacing="-2" textLength="592" lengthAdjust="spacingAndGlyphs">LAST TRAIN</text>
+  </g>
+  <path d="M64 930.6h592" stroke="#fdf2d8" stroke-width="1.2" opacity=".45"/>
+  <text x="64" y="988.6" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="21" letter-spacing="4" fill="#fdf2d8">LEO ASH</text>
+  <text x="656" y="1016" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#fdf2d8">f.</text>
+</svg>
