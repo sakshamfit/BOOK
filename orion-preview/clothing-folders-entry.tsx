@@ -16,7 +16,7 @@ if (listings.length && entries.length === listings.length) {
   const close = document.createElement('button');
   close.type = 'button'; close.setAttribute('aria-label', 'Close photo'); close.textContent = '×';
   const viewer = document.createElement('div');
-  dialog.append(close, viewer); document.body.appendChild(dialog);
+  dialog.appendChild(close); dialog.appendChild(viewer); document.body.appendChild(dialog);
   const viewerRoot = createRoot(viewer);
   let opener: HTMLButtonElement | null = null;
   let version = 0;
@@ -56,10 +56,10 @@ if (listings.length && entries.length === listings.length) {
     });
     galleries.forEach(gallery => photos.appendChild(gallery));
     if (!images.length) photos.textContent = 'No store photos are available in the original listing.';
-    else { const hint = document.createElement('p'); hint.className = 'folder-photo-hint'; hint.textContent = 'Select a photo to enlarge'; photos.prepend(hint); }
+    else { const hint = document.createElement('p'); hint.className = 'folder-photo-hint'; hint.textContent = 'Select a photo to enlarge'; photos.insertBefore(hint, photos.firstChild); }
     photos.hidden = true;
     const mount = document.createElement('div');
-    entry.append(mount, photos, details);
+    entry.appendChild(mount); entry.appendChild(photos); entry.appendChild(details);
     createRoot(mount).render(<GlassFolder label={brand.name} meta={brand.floor} files={files} contentId={photos.id} onPhotoSelect={(i, button) => showPhotos(files, brand.name, i, button)} onOpenChange={open => { photos.hidden = !open; }} />);
   });
 }
