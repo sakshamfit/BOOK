@@ -74,3 +74,11 @@ yarn-error.log*
 
 # Local editor and assistant settings
 /.claude/
+# The coffee interaction needs these small generated cutouts in the preview.
+!/orion-preview/images/coffee-server-cut.png
+!/orion-preview/images/glass-coffee-cup.png
+# Generated preview artwork is required by the Orion pages.
+!/orion-preview/images/*.jpg
+# Nested preview dependencies and generated deployment output are rebuilt locally.
+/orion-preview/node_modules/
+/orion-mall-site/dist/
