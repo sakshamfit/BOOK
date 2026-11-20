@@ -79,6 +79,8 @@ yarn-error.log*
 !/orion-preview/images/glass-coffee-cup.png
 # Generated preview artwork is required by the Orion pages.
 !/orion-preview/images/*.jpg
+# Optimised transparent garment cutouts are required by both clothing rails.
+!/orion-preview/images/clothing-rail/*.webp
 # Nested preview dependencies and generated deployment output are rebuilt locally.
 /orion-preview/node_modules/
 /orion-mall-site/dist/
