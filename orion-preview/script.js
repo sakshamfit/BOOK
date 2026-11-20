@@ -1,43 +1,3 @@
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('#nav');
-function setMenu(open) { nav.classList.toggle('open', open); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); }
-toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
-nav.addEventListener('click', (event) => { if (event.target.closest('a')) setMenu(false); });
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setMenu(false); toggle.focus(); } });
-document.addEventListener('click', (event) => { if (!event.target.closest('.header')) setMenu(false); });
-window.matchMedia('(min-width: 801px)').addEventListener('change', (event) => { if (event.matches) setMenu(false); });
-
-const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-if (!motionPreference.matches && 'IntersectionObserver' in window) {
-  const sections = document.querySelectorAll('.intro > div, .section-top, .experience-card, .brands-heading, .brand-grid, .cinema-image, .cinema-copy, .visit-inner > div');
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  sections.forEach((section) => { section.classList.add('reveal'); observer.observe(section); });
-  document.body.classList.add('motion-ready');
-  motionPreference.addEventListener('change', (event) => {
-    if (event.matches) { document.body.classList.remove('motion-ready'); observer.disconnect(); }
-  });
-}
-
-const heroBackground = document.getElementById('hero-video-background');
-if (heroBackground && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const iframe = document.createElement('iframe');
-  const params = new URLSearchParams({ autoplay: '1', mute: '1', loop: '1', playlist: 'EaEdZmbsStI', controls: '0', playsinline: '1', rel: '0', origin: window.location.origin });
-  iframe.src = 'https://www.youtube-nocookie.com/embed/EaEdZmbsStI?' + params.toString();
-  iframe.title = 'Orion Mall background video';
-  iframe.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
-  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-  iframe.tabIndex = -1;
-  heroBackground.appendChild(iframe);
-  window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (event) => { if (event.matches) iframe.remove(); });
-}
-
 // Group every exported floor-based directory into consistent, readable store cards.
 {
   const copy = document.querySelector('.export-copy');
@@ -93,7 +53,7 @@ document.querySelectorAll('.export-copy a').forEach((link) => {
   if (carousel && track && controls) {
     const slides = Array.from(track.querySelectorAll('a'));
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    let timer, focused = false;
+    let timer, focused = false, hovered = false, intersecting = true;
     const visible = () => matchMedia('(max-width: 650px)').matches ? 1 : 2;
     const page = () => {
       const positions = Array.from({ length: count() }, (_, i) => Math.min(slides[i * visible()].offsetLeft - track.offsetLeft, track.scrollWidth - track.clientWidth));
@@ -110,7 +70,7 @@ document.querySelectorAll('.export-copy a').forEach((link) => {
     };
     const go = n => { const index = ((n % count()) + count()) % count(); track.scrollTo({ left: slides[index * visible()].offsetLeft - track.offsetLeft, behavior: motion.matches ? 'auto' : 'smooth' }); };
     const stop = () => { clearInterval(timer); timer = undefined; };
-    const start = () => { stop(); if (!motion.matches && !focused) timer = setInterval(() => go(page() + 1), 5000); };
+    const start = () => { stop(); if (!motion.matches && !focused && !hovered && intersecting && !document.hidden) timer = setInterval(() => go(page() + 1), 5000); };
     const renderDots = () => {
       controls.replaceChildren();
       for (let i = 0; i < count(); i++) {
@@ -126,6 +86,10 @@ document.querySelectorAll('.export-copy a').forEach((link) => {
     carousel.addEventListener('focusout', event => { if (!carousel.contains(event.relatedTarget)) { focused = false; start(); } });
     track.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', () => { if (controls.children.length !== count()) renderDots(); else update(); });
+    carousel.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; stop(); } });
+    carousel.addEventListener('pointerleave', () => { hovered = false; start(); });
+    document.addEventListener('visibilitychange', start);
+    if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => { intersecting = entry.isIntersecting; start(); }).observe(carousel);
     motion.addEventListener('change', start);
     controls.hidden = false; carousel.classList.add('is-enhanced'); renderDots(); start();
   }

@@ -16,7 +16,10 @@
     "test:api": "node scripts/run-api-tests.mjs",
     "test:inventory": "python tests/inventory.py",
     "typecheck": "tsc --noEmit",
-    "test:worlds": "node scripts/run-world-tests.mjs"
+    "test:worlds": "node scripts/run-world-tests.mjs",
+    "build:clothing-rail": "node orion-preview/build-clothing-rail.mjs",
+    "test:clothing-rail": "node --test tests/clothing-rail.test.mjs",
+    "test:site-experience": "node --test tests/site-experience.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

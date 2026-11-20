@@ -1,0 +1,226 @@
+/* Shared polish for the standalone Orion site. No framework or animation library. */
+:root {
+  --site-gutter: clamp(18px, 5vw, 32px);
+  --site-header-height: 80px;
+  --site-ease: cubic-bezier(.22, .68, .2, 1);
+}
+/* Offset content anchors only; root scroll-padding makes focusing a sticky
+   navigation item incorrectly scroll the whole page on mobile browsers. */
+:where(main section[id], main > [id], footer[id]) { scroll-margin-top: calc(var(--site-header-height) + 20px); }
+body { -webkit-text-size-adjust: 100%; }
+main, .wrap, .sub-heading, .sub-card, .sub-card h2,
+.orion-exclusive-inner > *, .coffee-pour-inner > *, .movie-film > *,
+.orion-footer-top > *, .orion-footer-columns > * { min-width: 0; }
+main :is(h1, h2, h3) { text-wrap: balance; }
+.sub-heading h2, .sub-card h2, .export-title { overflow-wrap: anywhere; }
+.sub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.header { z-index: 60; transition: background-color .25s, box-shadow .25s; }
+.header.is-scrolled { background: #faf9f4f5; box-shadow: 0 4px 24px #20332612; }
+.header nav { gap: clamp(16px, 2.6vw, 37px); }
+.header nav > a { position: relative; min-height: 44px; display: inline-flex; align-items: center; }
+.header nav > a:not(.nav-button)::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 5px;
+  height: 1px; background: #b42332; transform: scaleX(0); transform-origin: left;
+  transition: transform .25s var(--site-ease);
+}
+.header nav > a:is(:hover, :focus-visible)::after { transform: scaleX(1); }
+.menu-toggle { align-items: center; cursor: pointer; border-radius: 50%; flex-shrink: 0; }
+.menu-toggle span { transition: transform .25s var(--site-ease); }
+.menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+.nav-backdrop { position: fixed; inset: 0; z-index: 50; background: #15271c70; backdrop-filter: blur(3px); }
+.nav-backdrop[hidden] { display: none; }
+/* Lock the viewport, not body: a body scroll container breaks sticky headers. */
+html.is-menu-open { overflow: hidden; overscroll-behavior: none; }
+.nav-backdrop { touch-action: none; }
+.site-progress {
+  position: fixed; z-index: 90; inset: 0 0 auto; height: 3px;
+  background: #b42332; transform: scaleX(0); transform-origin: left; pointer-events: none;
+}
+.back-to-top {
+  position: fixed; z-index: 45; right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom)); width: 48px; height: 48px;
+  display: grid; place-items: center; padding: 0; border: 1px solid #cbd0c4;
+  border-radius: 50%; background: #fffdf8; color: #344a38; cursor: pointer;
+  box-shadow: 0 5px 24px #2033261a; opacity: 0; visibility: hidden;
+  translate: 0 10px; transition: opacity .2s, translate .2s, visibility .2s;
+}
+.back-to-top svg { width: 20px; height: 20px; }
+.back-to-top.is-available { opacity: 1; visibility: visible; translate: none; }
+body.is-menu-open .back-to-top { opacity: 0; visibility: hidden; }
+.hero-content { animation: none; } /* Child reveals preserve the hero's centring transform. */
+.hero-motion-toggle {
+  min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; border: 1px solid #ffffff70; border-radius: 24px; padding: 8px 14px;
+  background: #17251e80; color: #fff; font: inherit; letter-spacing: .06em; cursor: pointer;
+}
+.hero-motion-toggle[hidden] { display: none; }
+:is(.button, .nav-button, .orion-exclusive-link, .cinema-link, .movie-primary-button,
+.movie-book-button, .service-directory-link, .service-contact a, .orion-pill) { min-height: 44px; }
+.fashion-controls { gap: 0; }
+.fashion-controls button { width: 44px; height: 44px; }
+.fashion-controls button::after { transition: width .25s, background-color .25s; }
+.fashion-controls button.is-active::after { width: 22px; border-radius: 6px; background: #344a38; }
+.footer-social-icon { width: 44px; height: 44px; }
+.orion-footer-columns a { min-height: 36px; display: flex; align-items: center; }
+.orion-footer-bottom > a { min-height: 44px; display: inline-flex; align-items: center; }
+.folder-photo-dialog > button, .folder-photo-dialog .warp-photo-controls button { width: 44px; height: 44px; }
+.brand-dialog button { min-width: 44px; min-height: 44px; }
+
+/* Only opt-in, non-physics wrappers are animated. Everything is visible without JS. */
+@media (prefers-reduced-motion: no-preference) {
+  html.site-motion [data-site-reveal] { opacity: 0; translate: 0 24px; transition: none; }
+  html.site-motion [data-site-reveal="media"] { scale: .985; }
+  html.site-motion [data-site-reveal].is-revealed {
+    opacity: 1; translate: none; scale: none;
+    transition: opacity .65s var(--site-ease), translate .8s var(--site-ease), scale .8s var(--site-ease);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  html.site-motion [data-site-reveal].reveal-immediate { transition: none; }
+  .nav-ready #nav.open > a { animation: nav-link-enter .4s var(--site-ease) both; animation-delay: calc(var(--nav-index, 0) * 40ms); }
+  :is(.orion-exclusive-link, .cinema-link, .movie-primary-button, .movie-book-button,
+  .service-directory-link, .service-contact a, .orion-pill) {
+    transition: translate .25s var(--site-ease), background-color .25s, color .25s, box-shadow .25s;
+  }
+  :is(.orion-exclusive-link, .cinema-link, .movie-primary-button, .movie-book-button,
+  .service-directory-link, .service-contact a) > span { display: inline-block; transition: transform .25s; }
+  .service-directory-card { transition: translate .3s var(--site-ease), box-shadow .3s; }
+  .experience-card img, .fashion-track img { transition: transform .65s var(--site-ease); }
+  .service-directory-card img { transition: transform .4s var(--site-ease); }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :is(.orion-exclusive-link, .cinema-link, .movie-primary-button, .movie-book-button,
+  .service-directory-link, .service-contact a):is(:hover, :focus-visible) { translate: 0 -3px; box-shadow: 0 8px 20px #20332615; }
+  :is(.orion-exclusive-link, .cinema-link, .movie-primary-button, .movie-book-button):hover > span { transform: translate(3px, -2px); }
+  .service-directory-card:hover { translate: 0 -6px; box-shadow: 0 14px 30px #b4233224; }
+  .service-directory-card:hover img { transform: translateY(-3px) rotate(-5deg); }
+  .experience-card:is(:hover, :focus-visible) img, .fashion-track a:is(:hover, :focus-visible) img { transform: scale(1.04); }
+  .fashion-track a { overflow: hidden; }
+  .back-to-top:hover { background: #344a38; color: #fff; }
+}
+@keyframes nav-link-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* Tablet navigation uses the same accessible panel as phones. */
+@media (max-width: 1024px) {
+  :root { --site-header-height: 70px; }
+  .header { height: var(--site-header-height); padding-inline: var(--site-gutter); }
+  .header nav, .header nav.open {
+    display: flex; flex-direction: column; align-items: stretch; gap: 4px;
+    position: absolute; top: 100%; left: 0; right: 0; padding: 16px var(--site-gutter) 24px;
+    background: #faf9f4; box-shadow: 0 14px 24px #20332618;
+    max-height: calc(100dvh - var(--site-nav-offset, var(--site-header-height))); overflow-y: auto; overscroll-behavior: contain;
+  }
+  .header nav > a { padding: 12px 10px; font-size: 16px; line-height: 1.4; }
+  .header nav > a:not(.nav-button)::after { left: 10px; right: 10px; bottom: 7px; }
+  .header nav > .nav-button { margin-top: 12px; justify-content: space-between; font-size: 12px; }
+  .nav-ready .menu-toggle { display: flex; width: 44px; height: 44px; padding: 0; background: transparent; border: 0; gap: 6px; flex-direction: column; justify-content: center; }
+  .nav-ready .menu-toggle span { width: 25px; height: 1px; background: #344a38; }
+  .nav-ready .header nav {
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+    transition: opacity .22s, transform .25s var(--site-ease), visibility 0s linear .25s;
+  }
+  .nav-ready .header nav.open { opacity: 1; visibility: visible; pointer-events: auto; transform: none; transition-delay: 0s; }
+  /* Navigation remains usable if the enhancement script is blocked or fails. */
+  html:not(.nav-ready) .header { height: auto; position: relative; flex-wrap: wrap; gap: 16px; padding-block: 16px; }
+  html:not(.nav-ready) .menu-toggle { display: none; }
+  html:not(.nav-ready) .header nav { position: static; width: 100%; max-height: none; box-shadow: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  html:not(.nav-ready) .header nav > a { font-size: 13px; }
+  .hero-motion-toggle { display: none; }
+  .hero-bottom { align-items: center; gap: 12px; }
+}
+@media (min-width: 1025px) { .nav-backdrop { display: none; } }
+
+/* Fluid type, real one-column layouts, generous touch targets, no overflow masking. */
+@media (max-width: 650px) {
+  .wrap { width: calc(100% - var(--site-gutter) * 2); }
+  .announcement { padding: 9px 18px; line-height: 1.7; letter-spacing: .1em; }
+  .announcement span { margin-inline: 8px; }
+  .hero { height: auto; min-height: clamp(560px, calc(100svh - 100px), 780px); display: flex; align-items: center; padding: 54px 0 88px; }
+  .hero-content { position: relative; inset: auto; transform: none; width: calc(100% - var(--site-gutter) * 2); margin-inline: auto; }
+  .hero h1 { font-size: clamp(40px, 10.6vw, 64px); line-height: 1.08; margin-block: 22px; }
+  .hero-content > p { font-size: 15px; line-height: 1.7; }
+  .hero-actions { flex-wrap: wrap; gap: 12px 22px; margin-top: 26px; }
+  .hero-actions .text-link { min-height: 44px; display: inline-flex; align-items: center; }
+  .hero-bottom { left: var(--site-gutter); right: var(--site-gutter); font-size: 9px; }
+  .intro { padding-block: 64px; }
+  .intro h2, .section-top h2, .brands h2 { font-size: clamp(34px, 9.5vw, 48px); }
+  .experiences { padding-bottom: 64px; }
+  .experience-card { height: clamp(340px, 108vw, 460px); }
+  .card-overlay { inset: auto 24px 24px; }
+  .brands { padding-top: 64px; }
+  .brands-heading .under-link { margin-top: 10px; }
+  .orion-exclusive { padding-top: 76px; padding-bottom: 100px; }
+  .orion-exclusive-copy h2 { font-size: clamp(27px, 7.5vw, 36px); }
+  .coffee-pour { padding: 60px var(--site-gutter); }
+  .coffee-pour .pour-actions { flex-wrap: wrap; }
+  .coffee-pour .pour-actions button { min-height: 44px; }
+  .fashion-showcase { padding-block: 60px; }
+  .fashion-heading h2 { font-size: clamp(25px, 6.5vw, 34px); }
+  .fashion-heading::before, .fashion-heading::after { min-width: 12px; }
+  .cinema.cinema-feature { min-height: 420px; padding: 36px 24px; margin-block: 28px 44px; }
+  .cinema-feature .cinema-copy h2 { font-size: clamp(36px, 9.5vw, 54px); }
+  .cinema-feature .cinema-label { letter-spacing: .1em; font-size: 10px; gap: 8px; }
+  .cinema-feature .cinema-copy p { font-size: 15px; }
+  .service-directory { padding-inline: var(--site-gutter); }
+  .service-directory-card { padding: 32px 24px; }
+  .service-directory-card p { font-size: 16px; line-height: 1.75; }
+  .service-details { padding: 60px var(--site-gutter); }
+  .service-contact { padding: 26px 22px; gap: 22px; }
+  .service-contact a { max-width: 100%; }
+  .sub-hero { min-height: 350px; }
+  .sub-hero-content { padding: 60px var(--site-gutter); width: 100%; }
+  .sub-hero h1 { font-size: clamp(38px, 10vw, 60px); overflow-wrap: anywhere; }
+  .sub-content { padding-block: 56px; }
+  .sub-heading { flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 24px; }
+  .sub-heading h2 { max-width: 100%; font-size: clamp(32px, 8.5vw, 48px); margin: 18px 0 0; }
+  .sub-heading a { min-height: 44px; display: inline-flex; align-items: center; }
+  .sub-grid { grid-template-columns: minmax(0, 1fr); }
+  .sub-card { grid-template-columns: 28px minmax(0, 1fr) 24px; gap: 10px; }
+  .sub-card:has(.category-image) { grid-template-columns: 24px 64px minmax(0, 1fr) 20px; }
+  .category-image { width: 64px; height: 64px; }
+  .export-content { padding-block: 44px 56px; }
+  .export-title { font-size: clamp(32px, 8.5vw, 48px); }
+  .export-copy { font-size: 15px; }
+  .export-copy h1 { font-size: 32px; }
+  .export-copy h2 { font-size: 27px; }
+  .export-copy :is(iframe, video) { max-width: 100%; }
+  .export-copy table { width: 100%; }
+  .movie-hero { min-height: 500px; padding: 68px var(--site-gutter); }
+  .movie-hero h1 { font-size: clamp(40px, 10.5vw, 64px); }
+  .movie-hero p { font-size: 16px; }
+  .movie-film-copy { padding: 28px 24px; }
+  .movie-details-heading, .movie-listing-heading { gap: 20px; }
+  .orion-doodle-footer { padding: 52px var(--site-gutter) max(24px, env(safe-area-inset-bottom)); }
+  .orion-footer-columns { gap: 18px; }
+  .orion-footer-columns a { min-height: 44px; margin-bottom: 0; padding-block: 8px; }
+  .orion-footer-columns h3 { margin-bottom: 10px; }
+  .orion-footer-cta p { font-size: clamp(21px, 5.7vw, 25px); }
+  .orion-pill { display: inline-flex; align-items: center; justify-content: center; }
+  .back-to-top { width: 44px; height: 44px; right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 480px) {
+  .hero-actions { align-items: flex-start; flex-direction: column; }
+  .hero-actions > .button { width: 100%; max-width: 320px; }
+  .movie-stats { grid-template-columns: 1fr; }
+  .movie-stats > div { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-right: 0; border-bottom: 1px solid #d8dcd3; padding: 20px 0; }
+  .movie-stats span { text-align: right; max-width: 20ch; margin: 0; }
+  .orion-footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .orion-footer-columns > div:last-child { grid-column: 1 / -1; }
+  .orion-bubble { white-space: normal; width: max-content; max-width: min(180px, 50vw); text-align: center; }
+  .friend-cat .orion-bubble { left: 0; transform: none; }
+  .friend-ghost .orion-bubble { left: auto; right: 0; transform: none; }
+}
+@media (max-height: 550px) and (orientation: landscape) {
+  .hero { min-height: 0; height: auto; padding-block: 56px 76px; display: flex; }
+  .hero-content { position: relative; inset: auto; transform: none; width: min(710px, calc(100% - var(--site-gutter) * 2)); margin-inline: auto; }
+  .hero h1 { font-size: clamp(38px, 6.5vw, 58px); }
+  .hero-actions { flex-direction: row; }
+  .hero-actions > .button { width: auto; }
+  .movie-hero { min-height: 420px; padding-block: 60px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html [data-site-reveal] { opacity: 1; translate: none; scale: none; }
+  .header, .header nav, .header nav > a, .header nav > a::after,
+  .menu-toggle span, .back-to-top, .fashion-controls button::after { transition: none; animation: none; }
+}

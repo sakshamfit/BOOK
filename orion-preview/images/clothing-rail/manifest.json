@@ -1,0 +1,69 @@
+{
+  "type": "AI-generated photorealistic wardrobe concepts, not stock or mall inventory",
+  "canvas": [
+    600,
+    930
+  ],
+  "brand": "ORION",
+  "brandPlacement": "viewer-right-chest",
+  "items": [
+    {
+      "id": "bone-tee",
+      "brandBakedIn": true,
+      "front": "bone-tee-front.webp",
+      "back": "bone-tee-back.webp"
+    },
+    {
+      "id": "ink-tee",
+      "brandBakedIn": true,
+      "front": "ink-tee-front.webp",
+      "back": "ink-tee-back.webp"
+    },
+    {
+      "id": "sky-shirt",
+      "brandBakedIn": true,
+      "front": "sky-shirt-front.webp",
+      "back": "sky-shirt-back.webp"
+    },
+    {
+      "id": "olive-knit",
+      "brandBakedIn": true,
+      "front": "olive-knit-front.webp",
+      "back": "olive-knit-back.webp"
+    },
+    {
+      "id": "heather-hoodie",
+      "brandBakedIn": true,
+      "front": "heather-hoodie-front.webp",
+      "back": "heather-hoodie-back.webp"
+    },
+    {
+      "id": "lilac-knit",
+      "brandBakedIn": true,
+      "front": "lilac-knit-front.webp",
+      "back": "lilac-knit-back.webp"
+    },
+    {
+      "id": "forest-jacket",
+      "brandBakedIn": true,
+      "front": "forest-jacket-front.webp"
+    },
+    {
+      "id": "brick-knit",
+      "brandBakedIn": true,
+      "front": "brick-knit-front.webp",
+      "back": "brick-knit-back.webp"
+    },
+    {
+      "id": "sand-coat",
+      "brandBakedIn": true,
+      "front": "sand-coat-front.webp"
+    },
+    {
+      "id": "ochre-tee",
+      "brandBakedIn": true,
+      "front": "ochre-tee-front.webp",
+      "back": "ochre-tee-back.webp"
+    }
+  ]
+}
